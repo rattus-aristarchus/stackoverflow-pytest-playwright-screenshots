@@ -9,7 +9,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 RES_DIR = os.path.join(BASE_DIR, "resources")
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture
 def context(request):
     playwright = sync_playwright().start()
     browser = playwright.chromium.launch(headless=False,args=["--start-maximized"])
